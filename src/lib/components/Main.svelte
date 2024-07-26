@@ -1,5 +1,6 @@
 <script>
   import Step from './Step.svelte'
+  import { Button } from '$lib/components/ui/button'
 
   let steps = [
     {
@@ -45,7 +46,7 @@
   let textColor = ''
 
   function getTimeOfDay() {
-    const hour = new Date().getHours()
+    const hour = 20 //new Date().getHours()
     if (hour >= 5 && hour < 12) {
       return 'morning'
     } else if (hour >= 12 && hour < 17) {
@@ -59,21 +60,21 @@
 
   function setColors() {
     timeOfDay = getTimeOfDay()
-
     switch (timeOfDay) {
       case 'morning':
         backgroundColor = '#E6E6FA' // Light lavender for morning
-        textColor = '#FFD700' // Dark gray text
+        textColor = 'text-yellow-500' // Dark gray text
         break
       case 'afternoon':
         backgroundColor = '#FFD700' // Gold for afternoon
-        textColor = '#000000' // Black text
+        textColor = 'text-orange-500' // Black text
         break
-      case 'night':
+      case 'evening':
         backgroundColor = '#191970' // Midnight Blue for night
-        textColor = '#FFFFFF' // White text
+        textColor = 'text-rose-500' // White text
         break
     }
+    return { backgroundColor, textColor }
   }
 </script>
 
@@ -85,14 +86,12 @@
     <div
       class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10"
     >
-      <button
-        class="blueShadow relative overflow-hidden px-1 py-77 group rounded-full bg-grey text-white-950"
+      <Button
+        class="relative overflow-hidden px-1 py-77 group rounded-full"
+        variant="ghost"
       >
-        <div
-          class="absolute top-3 left-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-10 z-0 duration-200"
-        />
-        <h4 class="relative z-9">Introducing Marketing Emails ></h4>
-      </button>
+        Introducing Marketing Emails >
+      </Button>
       <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
         Email for <span class="poppins text-white-400"> <br />Developers</span>
         <br />
@@ -104,20 +103,20 @@
       </p>
 
       <div class="flex items-center">
-        <button
+        <Button
           class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950"
         >
           <div
             class=" top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
           />
           <h4 class="relative z-9">Get started &rarr;</h4>
-        </button>
-        <button>
+        </Button>
+        <Button>
           <div
             class=" top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
           />
-          <h4 class="relative z-9">Documentation &rarr;</h4>
-        </button>
+          Documentation &rarr;
+        </Button>
       </div>
     </div>
     <div class="relative shadow-2x1 grid place-items-center">
@@ -180,7 +179,7 @@
       </div>
       <br />
       <h1 class={' text-3xl sm:text-3xl font-semibold text-center poppins '}>
-        Integrate <span class={setColors()}>
+        Integrate <span class={setColors().textColor}>
           this {getTimeOfDay()}
         </span>
       </h1>
@@ -254,22 +253,22 @@
     </div>
     <br />
     <div>
-      <button
+      <Button
         class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950 text-center"
       >
-        <p class="px-4 py-2 bg-white text-slate-950 font-medium">Get started</p>
-      </button>
+        Get started
+      </Button>
     </div>
     <br />
 
-    <button
+    <Button
       class="blueShadow relative overflow-hidden px-1 py-77 group rounded-full bg-grey text-white-950"
     >
       <div
         class="absolute top-2 left-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-10 z-0 duration-200"
       />
       <h4 class="relative z-9">Check The Docs ></h4>
-    </button>
+    </Button>
 
     <div>
       <h6 class="text-small sm:text-xl md:text-2xl text-center">
@@ -322,24 +321,24 @@
       </h1>
     </div>
     <div>
-      <button
+      <Button
         class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950 text-center"
       >
         <p class="px-4 py-2 bg-white text-slate-950 font-medium">
           Get started &darr;
         </p>
-      </button>
+      </Button>
     </div>
     <div>
       <br />
-      <button
+      <Button
         class="blueShadow relative overflow-hidden px-1 py-77 group rounded-full bg-grey text-white-950"
       >
         <div
           class="absolute top-2 left-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-10 z-0 duration-200"
         />
         <h4 class="relative z-9">Contact Us ></h4>
-      </button>
+      </Button>
     </div>
     <div class="relative shadow-2x1 grid place-items-center">
       <br /><br /><br /><br />

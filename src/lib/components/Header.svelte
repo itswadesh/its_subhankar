@@ -44,13 +44,6 @@
             />
             <h4 class="relative z-9">Login</h4>
         </button> -->
-    <Button
-      class="relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950"
-    >
-      <div
-        class=" top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
-      />
-      <h4 class="relative z-9">Get Started</h4>
-    </Button>
+    <Button class="px-5 py-2 group rounded-full">Get Started</Button>
   </div>
 </header>
