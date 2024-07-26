@@ -20,11 +20,11 @@
 <header
   class={'sticky z-[10] top-0 duration-200 px-6 flex items-center justify-between border-b border-solid ' +
     (y > 0
-      ? ' py-4 bg-slate-950 border-violet-950'
-      : ' py-6 bg-transparent border-transparent')}
+      ? ' py-4 bg-background border-violet-950'
+      : ' py-6 bg-background border-transparent')}
 >
   <h1 class="font-medium">
-    <b class="font-bold poppins">RESEND</b>
+    <a href="/" class="font-bold poppins">RESEND</a>
   </h1>
   <div class="sm:flex items-center gap-4 hidden">
     {#each tabs as tab, index}
