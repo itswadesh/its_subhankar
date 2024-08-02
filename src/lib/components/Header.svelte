@@ -5,13 +5,12 @@
 
   export let tabs = [
     { name: 'About ', link: '/about' },
-    { name: 'Blog', link: '#Blog' },
-    { name: 'Customers ', link: '#Customers' },
-    { name: 'Resources ', link: '#Resources ' },
-    { name: 'Docs ', link: '#Docs' },
-    { name: 'Pricing ', link: '#pricing' },
-
-    { name: 'Sign in ', link: '#Sign in' }
+    { name: 'Blog', link: '/blog' },
+    { name: 'Customers ', link: '/customers' },
+    { name: 'Resources ', link: '/resources ' },
+    { name: 'Docs ', link: '/docs' },
+    { name: 'Pricing ', link: '/pricing' },
+    { name: 'Sign in ', link: '/sign-in' }
     // { name: "Contact", link: "" },
     // {name: '', link: ''},
   ]
